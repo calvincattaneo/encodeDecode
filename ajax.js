@@ -99,43 +99,15 @@ $('.editAll').on('click', function () {
   var elements = $(this).closest('table').find('tbody :checkbox:checked');
   var tipoOption = $("input[name='tipoOption']").val();
   var isBase64 = $("input[name='isBase64']:checked").val();
-
+  
   var arr = [];
   for (var i = 0; i < elements.length; i++) {
 
     var id = elements[i].value;
-    arr.push({ id: id, tipoOption: tipoOption });
-    //preenche o array arr com os valores selecionados
-    /*$.ajax({
-      url: 'dadoByIdNoHtml.php',
-      type: 'POST',
-      async:false,
-      data: { id:id, tipoOption:tipoOption },
-      success: function(data){
-        obj = JSON.parse(data);
-        code = Base64.encode(obj[tipoOption]);
-        arr.push({ id: obj.idQ, tipoOption: tipoOption, option: obj[tipoOption], convert: code});
-      },
-      error: function(data){
-        console.log('erro: ', data);
-      }
-    });*/
-  }
-  //altera os valores selecionados
-  /*arr.forEach(function (item, indice, array) { //{id: "846", tipoOption: "title", option: "Plano de Ação", convert: "UGxhbm8gZGUgQcOnw6Nv"}
-    $.ajax({
-      url: 'updateConversao.php',
-      type: 'post',
-      dataType: 'json',
-      data: {id: item.id, tipoOption: item.tipoOption, convert: item.convert},
-      success: function(data) {
-        //
-      },
-      error: function(data){
-        console.log("Erro", data);
-      }
-    });
-  });*/
+    var posicao = elements[i].dataset.id;
+    arr.push({ id: id, tipoOption: tipoOption, posicao: posicao });
+    }
+
   //console.log(arr);
   $.ajax({
     url: 'updateConversaoNovo.php',
@@ -197,7 +169,7 @@ function base64_decode(data) {
   return dec;
 }
 
-//método usado no sapien com problemas usado para decodificar strings já codificadas
+//metodo usado no sapien com problemas usado para decodificar strings ja codificadas
 function base64_decode(data) {
   var o1, o2, o3, h1, h2, h3, h4, bits, i=0, ac=0, tmp_arr=[], dec='';
   if(!data)

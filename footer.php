@@ -20,12 +20,13 @@
           "method": "post",
           "url": "dados.php",
           "data": {
-              "options": "title"
+              "options": "texto"
             }
           },
           "columns": [
               { "data": "idQ" },
-              { "data": "title" },
+              { "data": "posicao" },
+              { "data": "texto" },
               { "data": "convertido" },
               { "data": "checkedId" },
               { "data": "btnId" },
@@ -35,13 +36,13 @@
                 "render": function ( data, type, row ) {
                   return Base64.encode(data);
                 },
-                "targets": 2
+                "targets": 3
               },
               {
                 "render": function ( data, type, row ) {
-                    return '<input type="checkbox" name="check" value="' + data + '" />';
+                    return '<input type="checkbox" name="check" value="' + data + '" data-id="' + row.posicao + '"/>';
                 },
-                "targets": 3
+                "targets": 4
               },
               {
                 "render": function (data, type, row) {
@@ -51,10 +52,10 @@
                     '<button type="button" class="btn btn-danger delete" data-id=' + data + '><i class="material-icons">delete</i></button>' +
                     '<div>';
                 },
-                "targets": 4
+                "targets": 5
               }
           ],
-          "lengthMenu": [ 10, 25, 75, 100, 300 ]
+          "lengthMenu": [ 10, 25, 75, 100, 250,300 ]
       } );
   });
   </script>
