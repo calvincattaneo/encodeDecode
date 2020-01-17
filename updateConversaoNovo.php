@@ -9,8 +9,7 @@ foreach ($arr as $ar) {
   $tipoOption = $ar["tipoOption"];
 
   //criando a query de consulta ? tabela criada
-  #$query = "SELECT idQ, $tipoOption FROM banco_quest_questoes WHERE idQ=$id"; // Quest?es
-  $query = "SELECT idQ, $tipoOption FROM banco_quest_questoes_itens WHERE idQ=$id"; // Itens
+  $query = "SELECT idQ, $tipoOption FROM banco_quest_questoes WHERE idQ=$id"; // Quest?es
   $sql = mysqli_query($cx, $query) or die(mysqli_error($cx)); //caso haja um erro na consulta
 
   //pecorrendo os registros da consulta.
@@ -25,7 +24,6 @@ foreach ($arr as $ar) {
 }
 
 foreach ($set as $s) {
-  # $query = "UPDATE banco_quest_questoes SET ".$s['tipoOption']."='".$s['convert']."' WHERE idQ = ".$s['idQ']."";//criando a query de atualização para QUESTÕES
-  $query = "UPDATE banco_quest_questoes_itens SET ".$s['tipoOption']."='".$s['convert']."' WHERE idQ = ".$s['idQ']."";//criando a query de atualização para ITENS
+  $query = "UPDATE banco_quest_questoes SET ".$s['tipoOption']."='".$s['convert']."' WHERE idQ = ".$s['idQ']."";//criando a query de atualiza??o para QUEST?ES
   $sql = mysqli_query($cx, $query) or die(mysqli_error($cx)); //caso haja um erro na consulta
 }

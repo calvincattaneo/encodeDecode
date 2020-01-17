@@ -26,7 +26,6 @@
             <a href="http://localhost/conversao/indexTexto.php" class="btn btn-secondary" role="button">Texto</a>
             <input type="hidden" name="tipoOption" value="texto">
             <a href="http://localhost/conversao/indexPrompt.php" class="btn btn-secondary" role="button">Prompt</a>
-            <a href="http://localhost/conversao/indexItens.php" class="btn btn-secondary" role="button">Itens</a>
         </div>
       </div>
       <div class="col-sm">

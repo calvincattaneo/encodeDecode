@@ -19,21 +19,18 @@ if($_POST["options"] == "texto") {
 }
 
 ## Total number of records without filtering
-#$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes WHERE $option != '' "); // Questões
-$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes_itens WHERE $option != '' "); // Itens
+$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes WHERE $option != '' "); // Questões
 $records = mysqli_fetch_assoc($sel);
 $totalRecords = $records['allcount'];
 
 ## Total number of records filtering
-# $sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes WHERE 1 $searchQuery AND $option != '' "); // Questões
-$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes_itens WHERE 1 $searchQuery AND $option != '' "); // Itens
+$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes WHERE 1 $searchQuery AND $option != '' "); // Questões
 $records = mysqli_fetch_assoc($sel);
 $totalRecordwithFilter = $records['allcount'];
 
 
 //criando a query de consulta à tabela criada
-#$query = "SELECT idQ, $option FROM banco_quest_questoes WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Questões
-$query = "SELECT idQ, $option FROM banco_quest_questoes_itens WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Itens
+$query = "SELECT idQ, $option FROM banco_quest_questoes WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Questões
 //var_dump($query);
 $sql = mysqli_query($cx,
   $query)
