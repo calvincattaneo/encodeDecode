@@ -40,9 +40,6 @@ $sql = mysqli_query($cx,
   or die(mysqli_error($cx) //caso haja um erro na consulta
 );
 
-$row = mysqli_fetch_assoc($sql);
-//var_dump($row);
-
 //pecorrendo os registros da consulta.
 $set = array();
 while($row = mysqli_fetch_assoc($sql)){
