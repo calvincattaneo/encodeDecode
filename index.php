@@ -102,6 +102,7 @@
   <script type="text/javascript">
   $(document).ready(function () {
     $('#table').DataTable( {
+      "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
       "processing": true,
       "serverSide": true,
       "ordering": false,
@@ -149,7 +150,7 @@
                 "targets": 4
               }
           ],
-          "lengthMenu": [ 10, 25, 75, 100, 300 ]
+          "lengthMenu": [ 10, 25, 75, 100, 300, 500 ]
       } );
   });
   </script>
