@@ -7,6 +7,7 @@
   <script type="text/javascript">
   $(document).ready(function () {
     $('#table').DataTable( {
+      "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
       "processing": true,
       "serverSide": true,
       "ordering": false,
@@ -55,7 +56,7 @@
                 "targets": 5
               }
           ],
-          "lengthMenu": [ 10, 25, 75, 100, 250,300 ]
+          "lengthMenu": [ 10, 25, 75, 100, 250,300, 500 ]
       } );
   });
   </script>

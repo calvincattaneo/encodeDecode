@@ -6,7 +6,8 @@ $tipoOption = $_POST["tipoOption"];
 $convert    = $_POST["convert"];
 
 //criando a query de atualização
-$query = "UPDATE banco_quest_questoes SET $tipoOption='".$convert."' WHERE idQ=$id";
+# $query = "UPDATE banco_quest_questoes SET $tipoOption='".$convert."' WHERE idQ=$id"; 
+$query = "UPDATE banco_quest_questoes_itens SET $tipoOption='".$convert."' WHERE idQ=$id"; 
 
 $sql = mysqli_query($cx, $query)
   or die(mysqli_error($cx) //caso haja um erro na consulta
