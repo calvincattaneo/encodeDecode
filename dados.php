@@ -20,20 +20,20 @@ if($_POST["options"] == "texto") {
 
 ## Total number of records without filtering
 # $sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes WHERE $option != '' "); // Questoes
-$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes_itens WHERE $option != '' "); // Itens
+$sel = mysqli_query($cx,"select count(*) as allcount from correcoes_questoes WHERE $option != '' "); // Itens
 $records = mysqli_fetch_assoc($sel);
 $totalRecords = $records['allcount'];
 
 ## Total number of records filtering
 # $sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes_itens WHERE 1 $searchQuery AND $option != '' "); // Questoes
-$sel = mysqli_query($cx,"select count(*) as allcount from banco_quest_questoes_itens WHERE 1 $searchQuery AND $option != '' "); // Itens
+$sel = mysqli_query($cx,"select count(*) as allcount from correcoes_questoes WHERE 1 $searchQuery AND $option != '' "); // Itens
 $records = mysqli_fetch_assoc($sel);
 $totalRecordwithFilter = $records['allcount'];
 
 
 //criando a query de consulta à tabela criada
 # $query = "SELECT idQ, $option FROM banco_quest_questoes WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Questoes
-$query = "SELECT idQ, posicao, $option FROM banco_quest_questoes_itens WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Itens
+$query = "SELECT idQ, idCorrecao, $option FROM correcoes_questoes WHERE $option != '' ORDER BY idQ LIMIT $row, $rowperpage"; // Itens
 //var_dump($query);
 $sql = mysqli_query($cx,
   $query)
@@ -45,7 +45,7 @@ $set = array();
 while($row = mysqli_fetch_assoc($sql)){
   $set[] = array(
     "idQ" => $row["idQ"],
-    "posicao" =>$row["posicao"], // para itens
+    "idCorrecao" =>$row["idCorrecao"], // para itens
     "$option" => htmlentities(utf8_encode($row["$option"])),
     "convertido" => utf8_encode($row["$option"]),
     "checkedId" => $row["idQ"],

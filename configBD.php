@@ -15,4 +15,4 @@ echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;*/
 
 //var_dump($cx->get_charset());
 //selecionando o banco de dados
-$db = mysqli_select_db($cx, "webcursos1");
+$db = mysqli_select_db($cx, "sapienlocal1");

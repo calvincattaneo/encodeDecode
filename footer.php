@@ -21,13 +21,13 @@
           "method": "post",
           "url": "dados.php",
           "data": {
-              "options": "texto"
+              "options": "title"
             }
           },
           "columns": [
               { "data": "idQ" },
-              { "data": "posicao" },
-              { "data": "texto" },
+              { "data": "idCorrecao" },
+              { "data": "title" },
               { "data": "convertido" },
               { "data": "checkedId" },
               { "data": "btnId" },
@@ -41,7 +41,7 @@
               },
               {
                 "render": function ( data, type, row ) {
-                    return '<input type="checkbox" name="check" value="' + data + '" data-id="' + row.posicao + '"/>';
+                    return '<input type="checkbox" name="check" value="' + data + '" data-id="' + row.idCorrecao + '"/>';
                 },
                 "targets": 4
               },
