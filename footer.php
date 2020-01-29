@@ -21,13 +21,13 @@
           "method": "post",
           "url": "dados.php",
           "data": {
-              "options": "texto"
+              "options": "prompt"
             }
           },
           "columns": [
               { "data": "idQ" },
               { "data": "idCorrecao" },
-              { "data": "texto" },
+              { "data": "prompt" },
               { "data": "convertido" },
               { "data": "checkedId" },
               { "data": "btnId" },
