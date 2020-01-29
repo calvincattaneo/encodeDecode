@@ -105,7 +105,8 @@ $('.editAll').on('click', function () {
 
     var id = elements[i].value;
     var idCorrecao = elements[i].dataset.id;
-    arr.push({ id: id, tipoOption: tipoOption, idCorrecao: idCorrecao });
+    var posicao = elements[i].dataset.posicao;
+    arr.push({ id: id, tipoOption: tipoOption, idCorrecao: idCorrecao, posicao:posicao });
     }
 
   //console.log(arr);
